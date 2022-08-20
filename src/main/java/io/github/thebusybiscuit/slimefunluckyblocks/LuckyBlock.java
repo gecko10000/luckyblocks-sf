@@ -26,9 +26,8 @@ public class LuckyBlock extends SlimefunItem {
     private Collection<Surprise> surprises;
     private Predicate<Surprise> predicate;
 
-    public LuckyBlock(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
-        super(itemGroup, item, recipeType, recipe);
-
+    public LuckyBlock(ItemGroup itemGroup, SlimefunItemStack item) {
+        super(itemGroup, item, RecipeType.NULL, new ItemStack[9]);
         addItemHandler(onBlockBreak());
     }
 

@@ -25,7 +25,6 @@ import org.bukkit.potion.PotionEffect;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
-import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.common.ChatColors;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.common.CommonPatterns;
@@ -118,17 +117,13 @@ public class SlimefunLuckyBlocks extends JavaPlugin implements SlimefunAddon {
         SlimefunItemStack pandorasBox = new SlimefunItemStack("PANDORAS_BOX", "86c7dde512871bd607b77e6635ad39f44f2d5b4729e60273f1b14fba9a86a", "&5Pandora\"s Box", "&7Luck: &c&oERROR");
 
         // @formatter:off
-        new LuckyBlock(itemGroup, luckyBlock, RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] { SlimefunItems.GOLD_12K, SlimefunItems.GOLD_12K, SlimefunItems.GOLD_12K, SlimefunItems.GOLD_12K, new ItemStack(Material.DISPENSER), SlimefunItems.GOLD_12K, SlimefunItems.GOLD_12K, SlimefunItems.GOLD_12K, SlimefunItems.GOLD_12K }).register(this, surprises, s -> s.getLuckLevel() != LuckLevel.PANDORA);
+        new LuckyBlock(itemGroup, luckyBlock).register(this, surprises, s -> s.getLuckLevel() != LuckLevel.PANDORA);
 
-        new LuckyBlock(itemGroup, veryLuckyBlock, RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] { null, SlimefunItems.GOLD_12K, null, SlimefunItems.GOLD_12K, luckyBlock, SlimefunItems.GOLD_12K, null, SlimefunItems.GOLD_12K, null }).register(this, surprises, s -> s.getLuckLevel() == LuckLevel.LUCKY);
+        new LuckyBlock(itemGroup, veryLuckyBlock).register(this, surprises, s -> s.getLuckLevel() == LuckLevel.LUCKY);
 
-        new LuckyBlock(itemGroup, veryUnluckyBlock, RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] { null, new ItemStack(Material.SPIDER_EYE), null, new ItemStack(Material.SPIDER_EYE), luckyBlock, new ItemStack(Material.SPIDER_EYE), null, new ItemStack(Material.SPIDER_EYE), null }).register(this, surprises, s -> s.getLuckLevel() == LuckLevel.UNLUCKY);
+        new LuckyBlock(itemGroup, veryUnluckyBlock).register(this, surprises, s -> s.getLuckLevel() == LuckLevel.UNLUCKY);
 
-        new LuckyBlock(itemGroup, pandorasBox, RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] { new ItemStack(Material.OAK_PLANKS), new ItemStack(Material.LAPIS_BLOCK), new ItemStack(Material.OAK_PLANKS), new ItemStack(Material.LAPIS_BLOCK), luckyBlock, new ItemStack(Material.LAPIS_BLOCK), new ItemStack(Material.OAK_PLANKS), new ItemStack(Material.LAPIS_BLOCK), new ItemStack(Material.OAK_PLANKS) }).register(this, surprises, s -> s.getLuckLevel() == LuckLevel.PANDORA);
+        new LuckyBlock(itemGroup, pandorasBox).register(this, surprises, s -> s.getLuckLevel() == LuckLevel.PANDORA);
         // @formatter:on
 
         new WorldGenerator(this);
