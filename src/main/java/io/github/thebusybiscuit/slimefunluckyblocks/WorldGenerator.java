@@ -38,8 +38,8 @@ public class WorldGenerator implements Listener {
             int y = e.getWorld().getHighestBlockYAt(x, z);
 
             Block current = e.getWorld().getBlockAt(x, y, z);
-            if (!current.getType().isSolid() && current.getRelative(BlockFace.DOWN).getType().isSolid()) {
-                plugin.spawnLuckyBlock(current);
+            if (current.getType().isSolid()) {
+                plugin.spawnLuckyBlock(current.getRelative(BlockFace.UP));
             }
         }
     }
