@@ -14,14 +14,14 @@ public class WorldGenerator implements Listener {
 
     private final SlimefunLuckyBlocks plugin;
     private final List<String> blacklist;
-    private final int chance;
+    private final double chance;
 
     public WorldGenerator(SlimefunLuckyBlocks plugin) {
         this.plugin = plugin;
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
 
         blacklist = plugin.getCfg().getStringList("world-blacklist");
-        chance = plugin.getCfg().getInt("chance");
+        chance = plugin.getCfg().getDouble("chance");
     }
 
     @EventHandler
@@ -32,7 +32,7 @@ public class WorldGenerator implements Listener {
 
         Random random = ThreadLocalRandom.current();
 
-        if (random.nextInt(100) < chance) {
+        if (random.nextDouble() * 100 < chance) {
             int x = e.getChunk().getX() * 16 + random.nextInt(16);
             int z = e.getChunk().getZ() * 16 + random.nextInt(16);
             int y = e.getWorld().getHighestBlockYAt(x, z);
