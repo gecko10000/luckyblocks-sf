@@ -18,9 +18,12 @@ public final class VoidHoleSurprise implements Surprise {
 
 	@Override
 	public void activate(Random random, Player p, Location l) {
-		for (int x = p.getLocation().getBlockX() - 1; x <= p.getLocation().getBlockX() + 1; x++) {
-			for (int z = p.getLocation().getBlockZ() - 1; z <= p.getLocation().getBlockZ() + 1; z++) {
-				for (int y = p.getLocation().getBlockY() + 1; y >= 0; y--) {
+		Location location = p.getLocation();
+		int bX = location.getBlockX();
+		int bZ = location.getBlockZ();
+		for (int x = bX - 1; x <= bX + 1; x++) {
+			for (int z = bZ - 1; z <= bZ + 1; z++) {
+				for (int y = location.getBlockY() + 1; y >= location.getWorld().getMinHeight(); y--) {
 					l.getWorld().getBlockAt(x, y, z).setType(Material.AIR);
 				}
 			}
