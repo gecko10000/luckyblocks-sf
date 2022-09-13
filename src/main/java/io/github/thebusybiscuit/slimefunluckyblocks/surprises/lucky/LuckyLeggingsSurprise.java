@@ -17,7 +17,7 @@ public final class LuckyLeggingsSurprise implements Surprise {
     private final ItemStack leggings;
 
     public LuckyLeggingsSurprise() {
-        leggings = new CustomItemStack(Material.DIAMOND_LEGGINGS, "&e&lLucky Leggings");
+        leggings = new CustomItemStack(Material.GOLDEN_LEGGINGS, "&e&lLucky Leggings");
         leggings.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 10);
         leggings.addUnsafeEnchantment(Enchantment.PROTECTION_PROJECTILE, 10);
         leggings.addUnsafeEnchantment(Enchantment.PROTECTION_EXPLOSIONS, 5);

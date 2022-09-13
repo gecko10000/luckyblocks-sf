@@ -17,7 +17,7 @@ public final class LuckyChestplateSurprise implements Surprise {
     private final ItemStack chestplate;
 
     public LuckyChestplateSurprise() {
-        chestplate = new CustomItemStack(Material.DIAMOND_CHESTPLATE, "&e&lLucky Chestplate");
+        chestplate = new CustomItemStack(Material.GOLDEN_CHESTPLATE, "&e&lLucky Chestplate");
         chestplate.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 10);
         chestplate.addUnsafeEnchantment(Enchantment.PROTECTION_PROJECTILE, 10);
         chestplate.addUnsafeEnchantment(Enchantment.PROTECTION_EXPLOSIONS, 5);

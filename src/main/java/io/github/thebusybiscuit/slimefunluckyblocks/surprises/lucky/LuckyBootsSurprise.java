@@ -17,7 +17,7 @@ public final class LuckyBootsSurprise implements Surprise {
     private final ItemStack boots;
 
     public LuckyBootsSurprise() {
-        boots = new CustomItemStack(Material.DIAMOND_BOOTS, "&e&lLucky Boots");
+        boots = new CustomItemStack(Material.GOLDEN_BOOTS, "&e&lLucky Boots");
         boots.addUnsafeEnchantment(Enchantment.PROTECTION_ENVIRONMENTAL, 10);
         boots.addUnsafeEnchantment(Enchantment.PROTECTION_PROJECTILE, 10);
         boots.addUnsafeEnchantment(Enchantment.PROTECTION_EXPLOSIONS, 5);
